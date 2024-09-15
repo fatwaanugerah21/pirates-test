@@ -74,8 +74,8 @@ body {
     --accent-foreground: #fafafa;
     --destructive: #741d1d;
     --destructive-foreground: #fafafa;
-    --border: #262626;
-    --input: #262626;
+    --border: #828282;
+    --input: #828282;
     --ring: #d4d4d4;
     --chart-1: #266eff;
     --chart-2: #33b299;
@@ -93,7 +93,10 @@ body {
     @apply bg-background text-foreground;
   }
   p {
-    @apply text-letter
+    @apply text-letter antialiased
+  }
+  p {
+    @apply text-base
   }
   .row {
     @apply flex items-center

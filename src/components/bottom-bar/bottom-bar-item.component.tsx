@@ -9,8 +9,8 @@ interface IBottomBarItemComponentProps {
 
 const BottomBarItemComponent: React.FC<IBottomBarItemComponentProps> = ({ isActive, label, icon: Icon }) => {
   return (
-    <div className={`flex flex-col items-center`}>
-      <Icon className={clsx(`w-6 h-6`, { "stroke-chart-1": isActive, "stroke-foreground": !isActive })} />
+    <div className={`flex flex-col items-center space-y-1`}>
+      <Icon className={clsx(`w-4 h-4`, { "stroke-chart-1": isActive, "stroke-foreground": !isActive })} />
       <p className={clsx(`text-xs`, { "text-chart-1": isActive, "text-foreground": !isActive })}>{label}</p>
     </div>
   );

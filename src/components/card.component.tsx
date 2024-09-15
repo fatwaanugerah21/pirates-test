@@ -11,13 +11,17 @@ interface ICardComponentProps {
   };
   location: string;
   tagLine?: string;
+  imgSrc: string;
 }
 
-const CardComponent: React.FC<ICardComponentProps> = ({ title, description, rating, location, tagLine }) => {
+const CardComponent: React.FC<ICardComponentProps> = ({ title, description, rating, location, tagLine, imgSrc }) => {
   return (
     <div className={`relative`}>
       <HeartIcon className={`text-white rounded-full p-2 w-9 h-9 absolute right-2 top-2 bg-[rgba(90,90,90,0.3)]`} />
-      <Image src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="testing" width={1500} height={400} className={`rounded-md`} />
+      <Image src={imgSrc} alt="testing" width={500} height={400} className={`rounded-md`} />
+      <div className={`relative`}>
+        <Image src={imgSrc} alt="testing" layout="fill" className={`rounded-md`} />
+      </div>
 
       <div className={`mt-2`}>
         {!!tagLine && (

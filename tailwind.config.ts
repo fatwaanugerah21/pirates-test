@@ -8,6 +8,17 @@ const config: Config = {
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
+		fontSize: {
+			xs: '0.6rem',
+			base: '0.7rem',
+			sm: '0.7rem',
+			lg: '0.9rem',
+			xl: '1rem',
+			'2xl': '1.2rem',
+			'3xl': '1.6rem',
+			'4xl': '2rem',
+			'5xl': '2.5rem',
+		},
 		extend: {
 			colors: {
 				background: 'var(--background)',
