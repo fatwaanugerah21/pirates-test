@@ -1,16 +1,24 @@
-import { searchNavs } from "@/lib/navs";
+import { pageNavs } from "@/lib/navs";
+import clsx from "clsx";
+import Link from "next/link";
 import React from "react";
-import NavItemComponent from "./navbar-item.component";
 
 interface INavbarComponentProps {}
 
 const NavbarComponent: React.FC<INavbarComponentProps> = ({}) => {
   return (
-    <div className={`justify-between flex space-x-2`}>
-      {searchNavs.map((n, idx) => {
-        return <NavItemComponent key={n.path + n.label + "nav-item"} label={n.label} path={n.path} isActive={idx === 0} />;
+    <nav className={`hidden sm:row w-full z-50 sticky top-0 bg-background shadow justify-center py-4 space-x-20 sm:px-14`}>
+      {pageNavs.map((n, idx) => {
+        const isActive = idx === 1;
+        const Icon = n.icon;
+        return (
+          <Link href="#" key={n.label + "navbar"} className={`row`}>
+            {!!Icon && <Icon className={clsx({ "stroke-chart-1": isActive })} />}
+            <p className={clsx({ "text-chart-1": isActive })}>{n.label}</p>
+          </Link>
+        );
       })}
-    </div>
+    </nav>
   );
 };
 export default NavbarComponent;

@@ -6,8 +6,8 @@ interface ICardComponentProps {
   title: string;
   description?: string;
   rating?: {
-    point: number;
-    reviewAmt: number;
+    point?: number;
+    reviewAmt?: number;
   };
   location: string;
   tagLine?: string;
@@ -16,10 +16,9 @@ interface ICardComponentProps {
 
 const CardComponent: React.FC<ICardComponentProps> = ({ title, description, rating, location, tagLine, imgSrc }) => {
   return (
-    <div className={`relative`}>
-      <HeartIcon className={`text-white rounded-full p-2 w-9 h-9 absolute right-2 top-2 bg-[rgba(90,90,90,0.3)]`} />
-      <Image src={imgSrc} alt="testing" width={500} height={400} className={`rounded-md`} />
-      <div className={`relative`}>
+    <div className={`relative sm:w-72 lg:w-64 hover:scale-105 duration-200 cursor-pointer`}>
+      <HeartIcon className={`text-white hover:brightness-150 duration-150 z-10 rounded-full p-2 w-9 h-9 absolute right-2 top-2 lg:-right-6 bg-[rgba(90,90,90,0.3)]`} />
+      <div className={`relative w-full h-52 sm:w-72 sm:h-72 lg:w-72 lg:h-72`}>
         <Image src={imgSrc} alt="testing" layout="fill" className={`rounded-md`} />
       </div>
 
